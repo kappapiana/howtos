@@ -92,6 +92,7 @@ Estrae solo gli hash senza lista dei nomi:
 
 Metto tutte le poste elettroniche in uno zip;
 
+
 Inserisco gli hash in una dichiarazione e firmo la dichiarazione; appongo la marca temporale (con Arubasign).
 
 > *nota:* Con Arubasign si può fare firma e marca in un solo passaggio.
@@ -100,7 +101,7 @@ Metto nella directory tutto quanto, per fare ordine
 
 Faccio backup
 
-# vedere al volo .p7m senza app del cazzo
+# vedere al volo .p7m senza app del cavolo
 
 `openssl smime -in documento.p7m -inform DER -verify -noverify -out documento.pdf `
 
