@@ -1,7 +1,7 @@
 # useful recurring commands
 
 
-# iptables
+# iptables - block 
 
 To view blocked IP address, enter:
 
