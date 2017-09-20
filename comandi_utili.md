@@ -23,7 +23,7 @@ Finally, make sure you save the firewall:
 
 # logs
 
-To get offending ip from access.logs
+To get offending IP from access.logs
 
 
     grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
