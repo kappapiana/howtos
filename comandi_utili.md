@@ -30,6 +30,7 @@ To get offending ip from access.logs
 
 
 # FDF per estrarre roba dai PDF compilati
+<!-- probably deprecated -->
 
 Estrarre FDF con **pdftk**
 
