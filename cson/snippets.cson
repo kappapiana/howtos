@@ -1,3 +1,5 @@
+# version 2017-09-20
+
 '.source.gfm':
   'ndash':
       'prefix': 'dash'
@@ -23,8 +25,8 @@
       'body': '{#sec:$1} $0'
 
 # ---------------------------------------------------
-# Questa roba serve solo per crossref
-# Ignorare
+# Crossref stuff
+# Ignore
 # ---------------------------------------------------
 
     'def reference crea instestazione come riferimento semplice':
@@ -51,6 +53,10 @@
     'Sezione con label (senza numero)':
       'prefix': 'label'
       'body': '{#sec:$1 label="$2"} $0'
+     
+# ---------------------------------------------------
+# end crossref
+# ---------------------------------------------------    
 
     'allineamento':
       'prefix': 'alli'
@@ -67,14 +73,17 @@
     'hyperlink online':
       'prefix': 'link'
       'body': '[$1]($2)$0'
-              
+      
+# add newer markdown and other text snippets here:
 
+              
+# snippet to create a snippet
 '.source.coffee':
   'qualcosa':
     'prefix': 'snip'
     'body': """'$1':
     \t'prefix': '$2'
     \t'body': '$3'
-    \t$0
+    $0
 """
 
