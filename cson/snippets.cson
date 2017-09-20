@@ -1,0 +1,80 @@
+'.source.gfm':
+  'ndash':
+      'prefix': 'dash'
+      'body': '&ndash;'
+
+  'comment':
+      'prefix': 'comm'
+      'body': '<!-- $1 --> $0'
+
+  'initial_crossref':
+      'prefix': 'cross'
+      'body': """---
+  numberSections: true
+  sectionsDepth: -1
+  secPrefix:
+  - "art."
+  - "artt."
+  ---
+"""
+
+  'reference':
+      'prefix': 'ref'
+      'body': '{#sec:$1} $0'
+
+# ---------------------------------------------------
+# Questa roba serve solo per crossref
+# Ignorare
+# ---------------------------------------------------
+
+    'def reference crea instestazione come riferimento semplice':
+      'prefix': 'def'
+      'body': """
+  {#sec:def_$1}
+  [$2]: @sec:def_$3) $0
+  """
+    'crea intestazione come articolo':
+      'prefix': 'ref_art'
+      'body': """
+  {#sec:$1}
+  [art. [@sec:$2]]: #sec:$3
+  """
+
+    'riferimento incrociato semplice numero non link':
+      'prefix': 'sec'
+      'body': '@sec:'
+
+    'riferimento ad articolo':
+      'prefix': 'art.'
+      'body': '[art. [@sec:$1]] $0'
+
+    'Sezione con label (senza numero)':
+      'prefix': 'label'
+      'body': '{#sec:$1 label="$2"} $0'
+
+    'allineamento':
+      'prefix': 'alli'
+      'body': '<div style="$1" $0>'
+
+    'fixme':
+      'prefix': 'fixme'
+      'body': '<!-- FIXME $1 --> $0'
+
+    'double':
+      'prefix': '--'
+      'body': '‒'
+
+    'hyperlink online':
+      'prefix': 'link'
+      'body': '[$1]($2)$0'
+              
+
+'.source.coffee':
+  'qualcosa':
+    'prefix': 'snip'
+    'body': """'$1':
+    \t'prefix': '$2'
+    \t'body': '$3'
+    \t$0
+"""
+
