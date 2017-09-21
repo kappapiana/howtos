@@ -53,10 +53,10 @@
     'Sezione con label (senza numero)':
       'prefix': 'label'
       'body': '{#sec:$1 label="$2"} $0'
-     
+
 # ---------------------------------------------------
 # end crossref
-# ---------------------------------------------------    
+# ---------------------------------------------------
 
     'allineamento':
       'prefix': 'alli'
@@ -73,10 +73,10 @@
     'hyperlink online':
       'prefix': 'link'
       'body': '[$1]($2)$0'
-      
+
 # add newer markdown and other text snippets here:
 
-              
+
 # snippet to create a snippet
 '.source.coffee':
   'qualcosa':
@@ -86,4 +86,3 @@
     \t'body': '$3'
     $0
 """
-
