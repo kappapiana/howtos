@@ -1,7 +1,7 @@
 # useful recurring commands
 
 
-# iptables - block 
+# iptables - block
 
 To view blocked IP address, enter:
 
@@ -26,7 +26,8 @@ Finally, make sure you save the firewall:
 To get offending IP from access.logs
 
 
-    grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
+    grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log
+    | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
 
 
 # FDF per estrarre roba dai PDF compilati
