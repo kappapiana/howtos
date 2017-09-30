@@ -67,4 +67,10 @@ Le parentesi `"{1,3}"` significa "il carattere prima, ripetuto da una a tre volt
 
 # per trovare indirizzo IP generico all'interno di un testo
 
+Per un qualsiasi indirizzo generico:
+
     grep '\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)' [nomefile]
+
+Se sappiamo in che classe è (ad esempio 192.0.0.0)
+
+    grep '192.\([0-9]\{1,3\}\).\([0-9]\{1,3\}\).\([0-9]\{1,3\}\)' [nomefile]
