@@ -56,3 +56,15 @@ Nota: i simboli `<` e `>` fanno sì che il testo venga interpretato come hyperli
 Per trovare ogni ricorrenza di <Testo2> che non è preceduta o seguita da <Testo1>:
 
     ((?!<Testo1>))(<Testo2>)
+
+# Grep
+
+Nota: in grep gli escape sono un po' strani.
+
+Non escape `[ ]` ma `\( \), \., e \{ \}`
+
+Le parentesi `"{1,3}"` significa "il carattere prima, ripetuto da una a tre volte". Un solo numero `{3}` significa "esattamente `n` volte"
+
+# per trovare indirizzo IP generico all'interno di un testo
+
+    grep '\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)' [nomefile]
