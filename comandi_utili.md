@@ -103,7 +103,7 @@ Faccio backup
 
 # vedere al volo .p7m senza app del cavolo
 
-`openssl smime -in documento.p7m -inform DER -verify -noverify -out documento.pdf `
+`openssl smime -in documento.p7m -inform DER -verify -noverify -out documento.pdf ` `#o .txt`
 
 se si vuole verificare il documento, usare il file delle CA
 
