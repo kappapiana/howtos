@@ -42,6 +42,8 @@ Prima stringa di sed per pulire il file FDF
 
 `sed '1,+7d' data.fdf | sed -n -e :a -e '1,10!{P;N;D;};N;ba' | sed 's/>>//g' | sed 's/<<//g' | sed '/^\s*$/d' | grep \/T | sed 's/\/T (\(.*\))/\1;/g' | tr -d '\n' > dati.csv`
 
+<!-- FIXME probabilmente questa roba non serve -->
+
 ## Generare i dati
 
 Prima dobbiamo creare una nuova linea in fondo al file
@@ -56,8 +58,11 @@ E di nuovo alla [1] per tutti i nuovi file
 
 Da qui si può generare uno script
 
-`<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere tolti, il terzo va filtrato, mi sa --> `
+`<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere
+      tolti, il terzo va filtrato, mi sa --> `
 
+`<!-- FIXME probabilmente lo script che abbiamo generato funziona senza tutta
+      questa pippa, con la form che abbiamo creato --> `
 
 # conservazione
 
