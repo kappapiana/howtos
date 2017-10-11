@@ -35,4 +35,3 @@ Checks the current status
     git pull
 
 Sends all changes from upstream to the github repository
-=======
