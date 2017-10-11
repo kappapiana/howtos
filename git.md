@@ -2,7 +2,7 @@
 Title: Git and how to use it for text stuff (mainly)
 Author: Carlo Piana
 ---
-<<<<<<< HEAD
+
 
 # After a fork has been created
 
@@ -36,4 +36,3 @@ Checks the current status
 
 Sends all changes from upstream to the github repository
 =======
->>>>>>> 3a044df9e5809f21a75b080bf5c7625d360dfcf1
