@@ -35,3 +35,13 @@ Checks the current status
     git pull
 
 Sends all changes from upstream to the github repository
+
+# Store credentials
+
+Command line Git client will not remember your credentials out of the box. Make sure you are running Git version 1.7.12.1 or higher, then use the following command to enable password caching:
+
+    git config --global credential.helper cache
+
+This will make git remember your credentials for 15 minutes after you entered them. To increase that limit use the following command and specify time in seconds:
+
+    git config --global credential.helper 'cache --timeout=3600'
