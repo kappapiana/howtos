@@ -45,3 +45,13 @@ Command line Git client will not remember your credentials out of the box. Make 
 This will make git remember your credentials for 15 minutes after you entered them. To increase that limit use the following command and specify time in seconds:
 
     git config --global credential.helper 'cache --timeout=3600'
+
+## To store for a particular repository
+
+Set a Git username:
+
+    git config user.name "Mona Lisa"
+
+Confirm that you have set the Git username correctly:
+
+    git config user.name
