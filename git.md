@@ -1,7 +1,14 @@
+
 ---
 Title: Git and how to use it for text stuff (mainly)
 Author: Carlo Piana
 ---
+
+# Add upstream to existing directory
+
+    git init
+    git remote add origin https://github.com/kappapiana/cson.git
+    git pull origin master
 
 
 # After a fork has been created
