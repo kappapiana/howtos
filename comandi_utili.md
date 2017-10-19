@@ -29,40 +29,6 @@ To get offending IP from access.logs
     grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
 
 
-# FDF per estrarre roba dai PDF compilati
-<!-- probably deprecated -->
-
-Estrarre FDF con **pdftk**
-
-`pdftk [nomefile] generate_fdf output data.fdf`
-
-Prima stringa di sed per pulire il file FDF
-
-## Generare i campi
-
-`sed '1,+7d' data.fdf | sed -n -e :a -e '1,10!{P;N;D;};N;ba' | sed 's/>>//g' | sed 's/<<//g' | sed '/^\s*$/d' | grep \/T | sed 's/\/T (\(.*\))/\1;/g' | tr -d '\n' > dati.csv`
-
-<!-- FIXME probabilmente questa roba non serve -->
-
-## Generare i dati
-
-Prima dobbiamo creare una nuova linea in fondo al file
-
-[1] `sed -i -e '$a\' dati.csv`
-
-Poi popoliamo i dati con l'altro comando:
-
-[2] `sed '1,+7d' data.fdf | sed -n -e :a -e '1,10!{P;N;D;};N;ba' | sed 's/>>//g' | sed 's/<<//g' | sed '/^\s*$/d' | grep \/V | sed 's/\/V (\(.*\))/\1;/g' | sed 's/\/V \/\(.*\)$/\1;/g' | tr -d '\n' >> dati.csv `
-
-E di nuovo alla [1] per tutti i nuovi file
-
-Da qui si può generare uno script
-
-`<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere
-      tolti, il terzo va filtrato, mi sa --> `
-
-`<!-- FIXME probabilmente lo script che abbiamo generato funziona senza tutta
-      questa pippa, con la form che abbiamo creato --> `
 
 # conservazione
 
@@ -149,3 +115,38 @@ metterlo in un file script e dirigere l'output su un file chiamato CA.pem (vedi 
 Per creare un HTML fatto benino:
 
 `pandoc -N --toc -Ss -c  ~/Documents/markdown/utility/pandoc.css comandi_utili.md -o comandi_utili.html --self-contained`
+
+
+<!-- # FDF per estrarre roba dai PDF compilati
+
+
+Estrarre FDF con **pdftk**
+
+`pdftk [nomefile] generate_fdf output data.fdf`
+
+Prima stringa di sed per pulire il file FDF
+
+## Generare i campi
+
+`sed '1,+7d' data.fdf | sed -n -e :a -e '1,10!{P;N;D;};N;ba' | sed 's/>>//g' | sed 's/<<//g' | sed '/^\s*$/d' | grep \/T | sed 's/\/T (\(.*\))/\1;/g' | tr -d '\n' > dati.csv`
+
+
+## Generare i dati
+
+Prima dobbiamo creare una nuova linea in fondo al file
+
+[1] `sed -i -e '$a\' dati.csv`
+
+Poi popoliamo i dati con l'altro comando:
+
+[2] `sed '1,+7d' data.fdf | sed -n -e :a -e '1,10!{P;N;D;};N;ba' | sed 's/>>//g' | sed 's/<<//g' | sed '/^\s*$/d' | grep \/V | sed 's/\/V (\(.*\))/\1;/g' | sed 's/\/V \/\(.*\)$/\1;/g' | tr -d '\n' >> dati.csv `
+
+E di nuovo alla [1] per tutti i nuovi file
+
+Da qui si può generare uno script -->
+<!--
+`<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere
+tolti, il terzo va filtrato, mi sa --> `
+
+<!-- `<!-- FIXME probabilmente lo script che abbiamo generato funziona senza tutta
+questa pippa, con la form che abbiamo creato -->  --> -->
