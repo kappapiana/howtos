@@ -62,3 +62,8 @@ Set a Git username:
 Confirm that you have set the Git username correctly:
 
     git config user.name
+    
+    
+# resolve conflicts
+
+    git mergetools
