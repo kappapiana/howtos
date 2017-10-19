@@ -78,7 +78,13 @@ Nota: in grep gli escape sono un po' strani.
 
 Non escape `[ ]` ma `\( \), \., e \{ \}`
 
+# Espressione numero di ripetizioni
+
 Le parentesi `"{1,3}"` significa "il carattere prima, ripetuto da una a tre volte". Un solo numero `{3}` significa "esattamente `n` volte"
+
+    a{1,3}
+    
+Trova a, aa, aaa.
 
 # per trovare indirizzo IP generico all'interno di un testo
 
