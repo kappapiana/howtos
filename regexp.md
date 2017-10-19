@@ -40,6 +40,21 @@ seleziona solo gli apici e non il contenuto
 
 `[\“|\”]`
 
+## Roba italiana
+
+Per trasformare contratti italiani in non nazionalizzati. Ricerca tutte le ricorrenze di Art. art. e roba simile:
+
+    \ [a|A]rt
+
+e per codice civile:
+
+    [c|C]{1,2}[\.| ]|(Cod)|(cod)
+
+Prende cc,
+C.c.,
+cc.,
+C.C.,
+c.c., Cod, cod
 
 # cambiare da hyperlink a nota in calce Markdown (Atom)
 
