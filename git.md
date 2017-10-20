@@ -1,7 +1,15 @@
+
 ---
 Title: Git and how to use it for text stuff (mainly)
 Author: Carlo Piana
+subject: questo e quello
 ---
+
+# Add upstream to existing directory
+
+    git init
+    git remote add origin https://github.com/kappapiana/cson.git
+    git pull origin master
 
 
 # After a fork has been created
@@ -55,3 +63,8 @@ Set a Git username:
 Confirm that you have set the Git username correctly:
 
     git config user.name
+    
+    
+# resolve conflicts
+
+    git mergetools

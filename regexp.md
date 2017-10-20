@@ -40,6 +40,21 @@ seleziona solo gli apici e non il contenuto
 
 `[\“|\”]`
 
+## Roba italiana
+
+Per trasformare contratti italiani in non nazionalizzati. Ricerca tutte le ricorrenze di Art. art. e roba simile:
+
+    \ [a|A]rt
+
+e per codice civile:
+
+    [c|C]{1,2}[\.| ]|(Cod)|(cod)
+
+Prende cc,
+C.c.,
+cc.,
+C.C.,
+c.c., Cod, cod
 
 # cambiare da hyperlink a nota in calce Markdown (Atom)
 
@@ -63,7 +78,13 @@ Nota: in grep gli escape sono un po' strani.
 
 Non escape `[ ]` ma `\( \), \., e \{ \}`
 
+# Espressione numero di ripetizioni
+
 Le parentesi `"{1,3}"` significa "il carattere prima, ripetuto da una a tre volte". Un solo numero `{3}` significa "esattamente `n` volte"
+
+    a{1,3}
+    
+Trova a, aa, aaa.
 
 # per trovare indirizzo IP generico all'interno di un testo
 
