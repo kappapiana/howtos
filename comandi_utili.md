@@ -17,7 +17,7 @@ Use the following syntax to **delete** or unblock an IP address under Linux, ent
 
     iptables -D INPUT -s [legit-ip] -j DROP
 
-Finally, make sure you save the firewall:
+    Finally, make sure you save the firewall:
 
     iptables-save > /etc/iptables.up.rules
 
@@ -118,6 +118,12 @@ Per creare un HTML fatto benino:
 
 `pandoc -N --toc -Ss -c  ~/Documents/markdown/utility/pandoc.css comandi_utili.md -o comandi_utili.html --self-contained`
 
+
+# Ubuntu sound systems not silenced
+
+On the command shell:
+
+    dconf write /org/gnome/desktop/sound/event-sounds false
 
 <!-- # FDF per estrarre roba dai PDF compilati
 
