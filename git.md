@@ -63,8 +63,16 @@ Set a Git username:
 Confirm that you have set the Git username correctly:
 
     git config user.name
-    
-    
+
+
 # resolve conflicts
 
     git mergetools
+
+# pull for all subdirectories
+
+One can use a scrip or a foreach, but actually, it's quite easy to use `find` and `-exec` to each first-level subdirectory.
+
+    find -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull \;
+
+Bingo!
