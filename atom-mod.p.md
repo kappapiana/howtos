@@ -12,7 +12,7 @@ title: modifiche
 * Installato markdown-writer
 * Installato markdown-scroll-sync
 * Supporto lingua: ``` en-US, it-IT ``` in spell check
-* Creata la keybind in markdown-writer
+* Creata la keybind in markdown-writer (`Packages > Markdown Writer > Configurations > Create Default Keymaps`)
 * Pandoc-crossref
 * aggiunto --filter=pandoc-crossref in markdown-preview-plus
 * Aggiornato l'elenco snippet con il file snippets.cson nel repository git
