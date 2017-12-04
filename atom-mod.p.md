@@ -23,3 +23,7 @@ title: modifiche
 'atom-workspace atom-text-editor':
 'alt-q': 'magic-reflow:reflow'
 ```
+
+* aggiunto dizionario italiano che non sega le accentate:
+  - https://addons.mozilla.org/firefox/downloads/file/666908/dizionario_italiano-5.0.0-an+fx+sm+tb.xpi?src=dp-btn-primary
+  - Unzip + locale path in Spell-checker package 
