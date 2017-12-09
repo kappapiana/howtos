@@ -1,0 +1,5 @@
+#/bin/bash!
+
+cd ~/Documenti
+
+/usr/bin/nautilus
