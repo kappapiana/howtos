@@ -9,6 +9,7 @@ To view blocked IP address, enter:
 
 To **ban** an IP on the fly
 
+
      iptables -I INPUT -s [foe-ip] -j DROP
 
 How Do I Delete or Unblock IP Address 1.2.3.4?
