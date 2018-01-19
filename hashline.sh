@@ -6,7 +6,16 @@
 # verify that the clientalready is listed. That does not compromise the entire
 # list.
 
-while read line; do echo -n $line|sha256sum; done < $1 |awk '{print $1}'
+if file $1 | grep -q 'text'; then # checks it's a text file, else it's rubbish
+
+  while read line; do echo -n $line|sha256sum; done < $1 |awk '{print $1}'
+
+else
+
+  echo "this is not a text file, please only use text files"
+
+fi
+
 
 # to check a single line:
 # echo -n "[hashed string]" | sha256 sum | awk '{print $1}'
