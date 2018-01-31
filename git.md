@@ -102,5 +102,8 @@ or
     git reset --soft da9e7f34064fe885ac76adf9c543dc98652f5568 #last commit id
     git commit -m "New message for the combined commit"
 
-- sync with the remote repository, forcing (using `+`). Like:
+- sync with the remote repository, forcing (using `+`). 
+
+Like:
+    
     git push origin +master
