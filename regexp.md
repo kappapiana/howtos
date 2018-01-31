@@ -80,11 +80,17 @@ Non escape `[ ]` ma `\( \), \., e \{ \}`
 
 # Espressione numero di ripetizioni
 
-Le parentesi `"{1,3}"` significa "il carattere prima, ripetuto da una a tre volte". Un solo numero `{3}` significa "esattamente `n` volte"
+Le parentesi `"{1,3}"` significa "il carattere precedente, ripetuto da una a tre volte". Un solo numero `{3}` significa "esattamente `n` volte"
 
     a{1,3}
     
 Trova a, aa, aaa.
+
+Ad esempio, se un furbacchione ha inserito i numeri di capitolo a mano all'inizio (1.1, 1.2, ... nn.mm) con Libreoffice usare:
+
+    ^[0-9]{1,2}\.[0-9]{1,2} 
+
+E sostituire con una stringa vuota. La regexp equivale a "ogni paragrafo che ha all'inizio una o due cifre, un punto, una o due cifre, uno spazio"
 
 # per trovare indirizzo IP generico all'interno di un testo
 
