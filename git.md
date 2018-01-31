@@ -81,3 +81,26 @@ One can use a scrip or a foreach, but actually, it's quite easy to use `find` an
     find -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull \;
 
 Bingo!
+
+
+# Consolidate many commits into one
+
+Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
+
+_Optional:_ create a new branch and operate on that one
+
+- checkout the branch you want to clean up.
+- return (soft) to the last good commit 
+
+this way:
+
+    git reset --soft HEAD~3
+    git commit -m "New message for the combined commit"
+
+or
+
+    git reset --soft da9e7f34064fe885ac76adf9c543dc98652f5568 #last commit id
+    git commit -m "New message for the combined commit"
+
+- sync with the remote repository, forcing (using `+`). Like:
+    git push origin +master
