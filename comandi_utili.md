@@ -18,9 +18,11 @@ Use the following syntax to **delete** or unblock an IP address under Linux, ent
 
     iptables -D INPUT -s [legit-ip] -j DROP
 
-    Finally, make sure you save the firewall:
 
-    iptables-save > /etc/iptables.up.rules
+Finally, **always** make sure you save the firewall:
+
+    sudo sh -c "iptables-save > /etc/network/iptables.save"
+
 
 # logs
 
