@@ -3,22 +3,34 @@
 
 # iptables - block
 
-To view blocked IP address, enter:
+To **ban** an IP on the fly
+
+     iptables -I INPUT -s $foeip -j DROP
+
+To view blocked IP addresses (if entered with the command above), enter:
 
     iptables -L INPUT -v -n
 
-To **ban** an IP on the fly
+or, to list all blocked (not just the INPUT chain) and show in which chain the offending ip is
 
+    sudo iptables --list -n --line-numbers | grep --color  "\(Chain\) \| \$foeip\)"
 
-     iptables -I INPUT -s [foe-ip] -j DROP
 
 How Do I Delete or Unblock IP Address 1.2.3.4?
 
-Use the following syntax to **delete** or unblock an IP address under Linux, enter:
+Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above:
 
-    iptables -D INPUT -s [legit-ip] -j DROP
+    iptables -D $chain -s [legit-ip] -j DROP
 
-    Finally, make sure you save the firewall:
+Check if the chain is INPUT!
+
+If the chain is fail2ban-ip-blocklist, remove the corresponding line(s) from `ip.blocklist.repeatoffender`
+
+        sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
+        
+Because it's something that you will find again at hte next restart of fail2ban!
+
+Finally, make sure you save the firewall:
 
     iptables-save > /etc/iptables.up.rules
 
