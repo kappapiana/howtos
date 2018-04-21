@@ -40,7 +40,7 @@ Reconciles the changes from the upstream with the local modifications.
 
 Checks the current status
 
-    git pull
+    git push
 
 Sends all changes from upstream to the github repository
 
