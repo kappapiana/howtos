@@ -3,21 +3,32 @@
 
 # iptables - block
 
-To view blocked IP address, enter:
+To **ban** an IP on the fly
+
+     iptables -I INPUT -s $foeip -j DROP
+
+To view blocked IP addresses (if entered with the command above), enter:
 
     iptables -L INPUT -v -n
 
-To **ban** an IP on the fly
+or, to list all blocked (not just the INPUT chain) and show in which chain the offending ip is
 
+    sudo iptables --list -n --line-numbers | grep --color  "\(Chain\) \| \$foeip\)"
 
-     iptables -I INPUT -s [foe-ip] -j DROP
 
 How Do I Delete or Unblock IP Address 1.2.3.4?
 
-Use the following syntax to **delete** or unblock an IP address under Linux, enter:
+Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above:
 
-    iptables -D INPUT -s [legit-ip] -j DROP
+    iptables -D $chain -s [legit-ip] -j DROP
 
+Check if the chain is INPUT!
+
+If the chain is fail2ban-ip-blocklist, remove the corresponding line(s) from `ip.blocklist.repeatoffender`
+
+        sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
+
+Because it's something that you will find again at hte next restart of fail2ban!
 
 Finally, **always** make sure you save the firewall:
 
@@ -31,12 +42,12 @@ To get offending IP from access.logs
 
     grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
 
-From mail.log 
+From mail.log
 
     sudo grep "SASL LOGIN authentication failed" /var/log/mail.log | grep 91.200| awk '{print $7}' | sed 's/]://g' | sed 's/unknown\[//g' | sort | uniq -c
-    
-Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works with unknown IPs. **TODO**: make it universal, e.g. by using the regexp 
- 
+
+Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works with unknown IPs. **TODO**: make it universal, e.g. by using the regexp
+
     '\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)'
 
 to find only the IP part.
