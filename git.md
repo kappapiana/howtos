@@ -82,7 +82,6 @@ One can use a scrip or a foreach, but actually, it's quite easy to use `find` an
 
 Bingo!
 
-
 # Consolidate many commits into one
 
 Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
