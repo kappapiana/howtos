@@ -90,7 +90,7 @@ Usecase: you have a messy history of many changes that you have committed, but w
 _Optional:_ create a new branch and operate on that one
 
 - checkout the branch you want to clean up.
-- return (soft) to the last good commit 
+- return (soft) to the last good commit
 
 this way:
 
@@ -102,8 +102,17 @@ or
     git reset --soft da9e7f34064fe885ac76adf9c543dc98652f5568 #last commit id
     git commit -m "New message for the combined commit"
 
-- sync with the remote repository, forcing (using `+`). 
+- sync with the remote repository, forcing (using `+`).
 
 Like:
-    
+
     git push origin +master
+
+
+## Prompt
+
+    parse_git_branch() {
+      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+
+    export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
