@@ -7,9 +7,15 @@ subject: questo e quello
 
 # Add upstream to existing directory
 
+If the project exists remotely but not Here
+
+    git clone $projectname
+
+If the project does not exist, create one online and push local stuff there
+
     git init
-    git remote add origin https://github.com/kappapiana/cson.git
-    git pull origin master
+    git remote add origin https://github.com/kappapiana/$projectname
+    git push origin master #sure it is this way?
 
 
 # After a fork has been created
