@@ -2,4 +2,4 @@
 
 cd ~/Documenti
 
-/usr/bin/nautilus
+/usr/bin/nautilus -s file:///home/carlo/Documents/
