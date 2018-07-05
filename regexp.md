@@ -101,3 +101,24 @@ Per un qualsiasi indirizzo generico:
 Se sappiamo in che classe è (ad esempio 192.0.0.0)
 
     grep '192.\([0-9]\{1,3\}\).\([0-9]\{1,3\}\).\([0-9]\{1,3\}\)' [nomefile]
+
+# usata in GDPR 
+
+    ^Article ([0-9]{1,3})\n\n(^.*$)
+
+sostituito con
+    
+    ## @$1 Article $1 $2
+    
+Era
+
+    Article n
+    
+    Title of the Article
+    
+Diventa 
+
+    ## @n Article n Title of the Article 
+    
+(consente l'indicizzazione dei capitoli)
+
