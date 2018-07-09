@@ -102,7 +102,10 @@ Se sappiamo in che classe è (ad esempio 192.0.0.0)
 
     grep '192.\([0-9]\{1,3\}\).\([0-9]\{1,3\}\).\([0-9]\{1,3\}\)' [nomefile]
 
-# usata in GDPR 
+
+# Legislazione Europea
+
+## usata in GDPR per articoli
 
     ^Article ([0-9]{1,3})\n\n(^.*$)
 
@@ -121,4 +124,15 @@ Diventa
     ## @n Article n Title of the Article 
     
 (consente l'indicizzazione dei capitoli)
+
+## per considerando
+
+(sostituzione solo in selezione di Atom)
+
+    ^(\([0-9]{1,3}\))\n\n\t\n
+    
+con 
+
+    ## @w$1
+    
 
