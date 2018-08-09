@@ -10,6 +10,15 @@ title: modifiche
 * Warn on large file limit 2 (mb)
 * Installato markdown-writer
 * Installato Markdown-preview-enhanced
+* Installato TODO
+  - inserire directory escluse
+  - controllare che ci siano
+    - ACTION  something you have to do;
+    - NB, XXX something that needs to be filled in the agreement;
+    - TBD an open point for discussion;
+    - TODO something we have to do (=action for you);
+    - FIXME something needing fixing (=nb for you) sostituiti
+* Installato atom-increment (per aggiornare elenchi incrementali non automatici)
 * Supporto lingua: ``` en-US, it-IT ``` in spell check
 * Creata la keybind in markdown-writer (`Packages > Markdown Writer > Configurations > Create Default Keymaps`)
 * Pandoc-crossref
