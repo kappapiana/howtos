@@ -9,7 +9,7 @@ title: modifiche
 * disabilitato language-gfm
 * Project home in /home/carlo/Documents/markdown
 * Warn on large file limit 2 (mb)
-* Installato markdown-writer
+* Installato markdown-writer 
 * Installato Markdown-preview-enhanced
 * Installato TODO
   - inserire directory escluse
