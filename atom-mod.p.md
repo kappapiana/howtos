@@ -4,6 +4,7 @@ title: modifiche
 # Creazione Ambiente per articoli
 
 * disabilitato markdown-preview
+* installato markdown-preview-enhanced (risolve scroll sync non funziona)
 * installato language-pfm
 * disabilitato language-gfm
 * Project home in /home/carlo/Documents/markdown
