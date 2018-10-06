@@ -11,7 +11,7 @@ title: modifiche
 * Warn on large file limit 2 (mb)
 * Installato markdown-writer
 * Installato Markdown-preview-enhanced
-* Installato TODO
+* Installato TODO-show
   - inserire directory escluse
   - controllare che ci siano (commentati in YAML)
     - ACTION  something you have to do;
