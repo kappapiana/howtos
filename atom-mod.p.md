@@ -11,6 +11,7 @@ title: modifiche
 * Warn on large file limit 2 (mb)
 * Installato markdown-writer
 * Installato Markdown-preview-enhanced
+* installato open-terminal-here
 * Supporto lingua: ``` en-US, it-IT ``` in spell check
 * Creata la keybind in markdown-writer (`Packages > Markdown Writer > Configurations > Create Default Keymaps`)
 * Pandoc-crossref
