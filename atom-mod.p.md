@@ -11,10 +11,19 @@ title: modifiche
 * Warn on large file limit 2 (mb)
 * Installato markdown-writer
 * Installato Markdown-preview-enhanced
-* installato open-terminal-here
+* Installato TODO
+  - inserire directory escluse
+  - controllare che ci siano (commentati in YAML)
+    - ACTION  something you have to do;
+    - NB, XXX something that needs to be filled in the agreement;
+    - TBD an open point for discussion;
+    - TODO something we have to do (=action for you);
+    - FIXME something needing fixing (=nb for you) sostituiti
+* Installato atom-increment (per aggiornare elenchi incrementali non automatici)
+* Installato open-terminal-here
 * Supporto lingua: ``` en-US, it-IT ``` in spell check
 * Creata la keybind in markdown-writer (`Packages > Markdown Writer > Configurations > Create Default Keymaps`)
-* Pandoc-crossref
+<!-- * Pandoc-crossref -->
 * Aggiornato l'elenco snippet con il file snippets.cson nel repository git
 * backup .atom
 * aggiunto pacchetto markdown-folding per poter collassare gli header
