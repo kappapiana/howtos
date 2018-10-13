@@ -1,4 +1,3 @@
-
 ---
 Title: Git and how to use it for text stuff (mainly)
 Author: Carlo Piana
@@ -91,7 +90,7 @@ Bingo!
 # Consolidate many commits into one
 
 Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
-
+ 
 _Optional:_ create a new branch and operate on that one
 
 - checkout the branch you want to clean up.
