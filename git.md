@@ -92,6 +92,8 @@ Bingo!
 
 Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
 
+## The correct way
+
 **not optional** always create a new branch and operate on that one. Otherwise it's a mess. So you have made a few changes in the branch and want to merge with the master, removing all the mess in the feature commits.
 
 first off, fetch upstream, otherwise you will have conflicts with that.
@@ -117,6 +119,7 @@ Done. Now you will want to amend the only remaining comment, to capture all the 
 
 Now you can merge your branch back into the master, if you are happy with the changes.
 
+## The hard way
 
 Otherwise, you could do something harder.
 
