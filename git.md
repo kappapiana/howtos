@@ -89,37 +89,36 @@ Bingo!
 
 # Consolidate many commits into one
 
+
 Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
-<<<<<<< HEAD
- 
-_Optional:_ create a new branch and operate on that one
-=======
 
-## the correct way
+**not optional** always create a new branch and operate on that one. Otherwise it's a mess. So you have made a few changes in the branch and want to merge with the master, removing all the mess in the feature commits.
 
-**not optional** create a new branch and always operate on that one. Otherwise it's a mess.
+first off, fetch upstream, otherwise you will have conflicts with that.
 
     git fetch upstream
 
-To align with the most recent upstream
+then checkout to the feature
+
+    git checkout feature
+
+Now we redo all the changes into one:
 
     git rebase -i master --autostash
 
-Aligns with the master, then you can commit all changes into a new commit.
+This aligns with the master, allowing you to squash the intervening commits (with fixup)
 
 Careful to select "fixup" to the comments you want to discard.
 
-Done. Now you will want to amend the comment, to capture all the changes.
+Done. Now you will want to amend the only remaining comment, to capture all the changes.
 
     git commit --amend
 
 
 Now you can merge your branch back into the master, if you are happy with the changes.
 
-## The harder way
 
 Otherwise, you could do something harder.
->>>>>>> 6627186... Explain how to merge
 
 - checkout the branch you want to clean up.
 - return (soft) to the last good commit
