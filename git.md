@@ -79,6 +79,8 @@ Confirm that you have set the Git username correctly:
 
     git mergetools
 
+but actually Atom has a resolver embedded (some package? can't tell). Quite efficient.
+
 # pull for all subdirectories
 
 One can use a scrip or a foreach, but actually, it's quite easy to use `find` and `-exec` to each first-level subdirectory.
