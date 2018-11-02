@@ -83,9 +83,17 @@ Confirm that you have set the Git username correctly:
 
 One can use a scrip or a foreach, but actually, it's quite easy to use `find` and `-exec` to each first-level subdirectory.
 
-    find -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull \;
+    find -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull --all \;
 
 Bingo!
+
+TODO implement this thing:
+
+    git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+    git fetch --all
+    git pull --all
+
+because if I have created branch on one computer, I might fail to have on a different computer.
 
 # Consolidate many commits into one
 
