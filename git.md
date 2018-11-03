@@ -49,6 +49,46 @@ Checks the current status
 
 Sends all changes from upstream to the github repository
 
+## new instructions
+
+    $ git checkout master
+
+Ensure you are on master
+
+    $ git pull upstream master && git push origin master
+
+gets stuff from upstream and ensures the github respository is aligned
+
+    $ git checkout -b hotfix/readme-update
+
+Creates a new branch.
+
+To push the new branch:
+
+    $ git push -u origin hotfix/readme-update
+
+Now the upstream branch is aligned with the local. All pushes are local too.
+
+On a new work on the project:
+
+    git branch -r
+
+Checks all branches on the remote.
+
+    git branch
+
+Checks all local branches. Compare the two.
+
+Alternatively:
+
+    git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+    git fetch --all
+    git pull --all
+
+because if I have created branch on one computer, I might fail to have on a
+different computer. This checks all local and remote are aligned
+
+
 # Store credentials
 
 
@@ -88,14 +128,6 @@ One can use a scrip or a foreach, but actually, it's quite easy to use `find` an
     find -maxdepth 1 -mindepth 1 -type d -exec git -C {} pull --all \;
 
 Bingo!
-
-TODO implement this thing:
-
-    git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
-    git fetch --all
-    git pull --all
-
-because if I have created branch on one computer, I might fail to have on a different computer.
 
 # Consolidate many commits into one
 
