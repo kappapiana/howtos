@@ -4,6 +4,37 @@ Author: Carlo Piana
 subject: questo e quello
 ---
 
+
+# Store credentials
+
+
+You need to setup the git credential helper with Gnome Keyring:
+
+Install and compile the Gnome Keyring devel:
+
+    sudo apt-get install libgnome-keyring-dev
+    sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
+
+And setup the credential:
+
+    git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+
+
+Remember to config your name
+
+    git config --global user.name kappapiana
+
+## To store for a particular repository
+
+Set a Git username:
+
+    git config user.name "kappapiana"
+
+Confirm that you have set the Git username correctly:
+
+    git config user.name
+
+
 # Add upstream to existing directory
 
 If the project exists remotely but not Here
@@ -64,31 +95,6 @@ Alternatively:
 because if I have created branch on one computer, I might fail to have on a
 different computer. This checks all local and remote are aligned
 
-
-# Store credentials
-
-
-You need to setup the git credential helper with Gnome Keyring:
-
-Install and compile the Gnome Keyring devel:
-
-    sudo apt-get install libgnome-keyring-dev
-    sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
-
-And setup the credential:
-
-    git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
-
-
-## To store for a particular repository
-
-Set a Git username:
-
-    git config user.name "Mona Lisa"
-
-Confirm that you have set the Git username correctly:
-
-    git config user.name
 
 
 # resolve conflicts
