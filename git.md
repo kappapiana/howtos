@@ -4,9 +4,9 @@ Author: Carlo Piana
 subject: questo e quello
 ---
 
+# General stuff
 
-# Store credentials
-
+## Store credentials
 
 You need to setup the git credential helper with Gnome Keyring:
 
@@ -20,11 +20,11 @@ And setup the credential:
     git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 
-Remember to config your name
+## In general, to config
 
     git config --global user.name kappapiana
 
-## To store for a particular repository
+To store for a particular repository
 
 Set a Git username:
 
@@ -34,6 +34,14 @@ Confirm that you have set the Git username correctly:
 
     git config user.name
 
+## List of current global config
+
+    credential.helper=/usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+    user.name=kappapiana
+    user.email=carlo@piana.eu
+    core.editor=vim
+    diff.tool=tkdiff
+    merge.tool=meld
 
 # Add upstream to existing directory
 
@@ -86,7 +94,7 @@ Checks all branches on the remote.
 
 Checks all local branches. Compare the two.
 
-Alternatively:
+Alternatively (not advisable):
 
     git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
     git fetch --all
@@ -103,7 +111,9 @@ different computer. This checks all local and remote are aligned
 
 but actually Atom has a resolver embedded (some package? can't tell). Quite efficient.
 
-# pull for all subdirectories
+# Few tricks
+
+## Pull for all subdirectories
 
 One can use a scrip or a foreach, but actually, it's quite easy to use `find` and `-exec` to each first-level subdirectory.
 
@@ -111,14 +121,22 @@ One can use a scrip or a foreach, but actually, it's quite easy to use `find` an
 
 Bingo!
 
-# Consolidate many commits into one
+## Consolidate many commits into one
 
 
 Usecase: you have a messy history of many changes that you have committed, but want to have a cleaner history.
 
 ## The correct way
 
-**not optional** always create a new branch and operate on that one. Otherwise it's a mess. So you have made a few changes in the branch and want to merge with the master, removing all the mess in the feature commits.
+You can avoid messing up by using one single commit and amend it
+
+    git add #stages some modified file
+
+    git commit --amend  #commits all staged file into the previous commit
+                        #(and allows to change the message)
+
+
+So you have made a few changes in the branch and want to merge with the master, removing all the mess in the feature commits.
 
 first off, fetch upstream, otherwise you will have conflicts with that.
 
@@ -140,12 +158,12 @@ Done. Now you will want to amend the only remaining comment, to capture all the 
 
     git commit --amend
 
-
 Now you can merge your branch back into the master, if you are happy with the changes.
+
 
 ## The hard way
 
-Otherwise, you could do something harder.
+Otherwise, you could do something harder (absolutely not advisable).
 
 - checkout the branch you want to clean up.
 - return (soft) to the last good commit
