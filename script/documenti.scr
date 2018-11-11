@@ -1,5 +1,13 @@
 #/bin/bash!
 
-cd ~/Documenti
+if [ -d ~/Documenti ]; then
 
-/usr/bin/nautilus -s file:///home/carlo/Documents/
+	cd ~/Documenti
+
+else 
+
+	cd ~/Documents
+
+fi 
+
+/usr/bin/nautilus .
