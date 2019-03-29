@@ -103,6 +103,12 @@ Alternatively (not advisable):
 because if I have created branch on one computer, I might fail to have on a
 different computer. This checks all local and remote are aligned
 
+## Get a remote branch to local
+
+    git branch -r #gets the List
+
+    git checkout -t origin/[namebranch] #copies remote branch, sets to track it
+
 
 
 # resolve conflicts
