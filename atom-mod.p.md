@@ -25,7 +25,6 @@ title: modifiche
 * Creata la keybind in markdown-writer (`Packages > Markdown Writer > Configurations > Create Default Keymaps`)
 <!-- * Pandoc-crossref -->
 * Aggiornato l'elenco snippet con il file snippets.cson nel repository git
-* backup .atom
 * aggiunto pacchetto markdown-folding per poter collassare gli header
 * aggiunto pacchetto magic-reflow, disabilitato autoflow
 * creato shortcut  ```
@@ -37,3 +36,32 @@ title: modifiche
     - <https://addons.mozilla.org/firefox/downloads/file/666908/dizionario_italiano-5.0.0-an+fx+sm+tb.xpi?src=dp-btn-primary
     - Unzip + locale path in Spell-checker package
 * In bracket-matcher inserito espressamente i caratteri <> (default non funziona)!
+
+# Replicare install
+
+- Installare **sync-settings** https://atom.io/packages/sync-settings
+- Seguire le istruzioni locali per il primo backup
+- Clonare install in altri posti ("Cloning a backup to a fresh Atom install")
+
+# nuovi moduli (non standard)
+
+## Pandoc-crossref
+
+- O installare via cabal
+- O installare direttamente il binario tirandolo giù da github
+<https://github.com/lierdakil/pandoc-crossref/releases>
+
+## include pandoc
+
+sudo pip install include-pandoc && sudo include-pandoc --update
+
+## inline git diff
+
+apm install alpianon/atom-inline-git-diff
+
+## Inline headers
+
+Segui:
+<https://github.com/alpianon/pandoc-inline-headers>
+
+Per ora servono due file in [assets](assets/)
