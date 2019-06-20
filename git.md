@@ -15,7 +15,7 @@ Install and compile the Gnome Keyring devel:
     sudo apt-get install libgnome-keyring-dev
     sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
 
-And setup the credential:
+And setup the credentials:
 
     git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
