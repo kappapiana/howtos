@@ -65,3 +65,9 @@ Segui:
 <https://github.com/alpianon/pandoc-inline-headers>
 
 Per ora servono due file in [assets](assets/)
+
+## Mustaches
+
+Per inserire variabili in doppie curly brackets
+
+sudo pip3 install pandoc-mustache
