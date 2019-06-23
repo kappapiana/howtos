@@ -59,12 +59,15 @@ sudo pip install include-pandoc && sudo include-pandoc --update
 
 apm install alpianon/atom-inline-git-diff
 
+
 ## Inline headers
 
 Segui:
 <https://github.com/alpianon/pandoc-inline-headers>
 
 Per ora servono due file in [assets](assets/)
+
+Installa sia 	crossref-ordered-list.py che pandoc-inline-headers (filtri in quest'ordine)
 
 ## Mustaches
 
