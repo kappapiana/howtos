@@ -28,12 +28,13 @@ If the chain is fail2ban-ip-blocklist, remove the corresponding line(s) from `ip
 
         sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
 
-Because it's something that you will find again at hte next restart of fail2ban!
+Because it's something that you will find again at the next restart of fail2ban!
 
 Finally, **always** make sure you save the firewall:
 
     sudo sh -c "iptables-save > /etc/network/iptables.save"
 
+**note: or add permanence**
 
 # logs
 
@@ -44,7 +45,9 @@ To get offending IP from access.logs
 
 From mail.log
 
-    sudo grep "SASL LOGIN authentication failed" /var/log/mail.log | grep 91.200| awk '{print $7}' | sed 's/]://g' | sed 's/unknown\[//g' | sort | uniq -c
+    sudo tail -n 1000 /var/log/mail.log | egrep "unknown\[.*]\: SASL LOGIN authentication failed" | awk '{print $7}' | sed 's/]://g' | sed 's/unknown\[//g' | sort | uniq | sort -n > ip.txt
+
+Note, to see who's more trespasser, you can add `-c` to uniq, to see how many ip did this
 
 Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works with unknown IPs. **TODO**: make it universal, e.g. by using the regexp
 
