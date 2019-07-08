@@ -13,8 +13,9 @@ To view blocked IP addresses (if entered with the command above), enter:
 
 or, to list all blocked (not just the INPUT chain) and show in which chain the offending ip is
 
-    sudo iptables --list -n --line-numbers | grep --color  "\(Chain\) \| \$foeip\)"
-
+```bash
+sudo iptables --list -n --line-numbers | egrep --color  "(Chain) | $foeip"
+```
 
 How Do I Delete or Unblock IP Address 1.2.3.4?
 
