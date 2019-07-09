@@ -41,16 +41,19 @@ Finally, **always** make sure you save the firewall:
 
 To get offending IP from access.logs
 
-
-    grep "POST /wp-login.php HTTP/1.1" /var/log/apache2/other_vhosts_access.log | grep nonpercaso | awk '{print $2}' | uniq > ip.txt
-
 From mail.log
 
-    sudo tail -n 1000 /var/log/mail.log | egrep "unknown\[.*]\: SASL LOGIN authentication failed" | awk '{print $7}' | sed 's/]://g' | sed 's/unknown\[//g' | sort | uniq | sort -n > ip.txt
+```bash
+
+sudo tail -n 1000 /var/log/mail.log | egrep "(unknown\[.*]\: SASL LOGIN authentication failed) \
+    | (lost connection after AUTH from unknown)" \
+    | grep -o -P "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b" \
+    | sort | uniq | sort -n > ip.txt
+```
 
 Note, to see who's more trespasser, you can add `-c` to uniq, to see how many ip did this
 
-Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works with unknown IPs. **TODO**: make it universal, e.g. by using the regexp
+Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works with unknown IPs.
 
     '\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)\.\([0-9]\{1,3\}\)'
 
