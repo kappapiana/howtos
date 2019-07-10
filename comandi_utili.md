@@ -44,11 +44,11 @@ To get offending IP from access.logs
 From mail.log
 
 ```bash
-
-sudo tail -n 1000 /var/log/mail.log | egrep "(unknown\[.*]\: SASL LOGIN authentication failed) \
-    | (lost connection after AUTH from unknown)" \
-    | grep -o -P "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b" \
-    | sort | uniq | sort -n > ip.txt
+sudo tail -n 1000 /var/log/mail.log | egrep "(unknown\[.*]\: SASL LOGIN authentication failed)\
+|(lost connection after AUTH from unknown)\
+|(w.piana.eu>: Relay access denied)"  \
+| grep -o -P "\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b"     \
+| sort | uniq | sort -n > $file
 ```
 
 Note, to see who's more trespasser, you can add `-c` to uniq, to see how many ip did this
