@@ -14,14 +14,16 @@ To view blocked IP addresses (if entered with the command above), enter:
 or, to list all blocked (not just the INPUT chain) and show in which chain the offending ip is
 
 ```bash
-sudo iptables --list -n --line-numbers | egrep --color  "(Chain) | $foeip"
+sudo iptables --list -n --line-numbers | egrep --color  "(Chain) | $foeIP"
 ```
 
 How Do I Delete or Unblock IP Address 1.2.3.4?
 
 Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above:
 
-    iptables -D $chain -s [legit-ip] -j DROP
+```bash
+    iptables -D $chain -s $friendIP -j DROP
+```
 
 Check if the chain is INPUT!
 
@@ -30,6 +32,13 @@ If the chain is fail2ban-ip-blocklist, remove the corresponding line(s) from `ip
         sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
 
 Because it's something that you will find again at the next restart of fail2ban!
+
+To whitelist an IP (be sure this rule prevails)
+
+```bash
+sudo iptables -A INPUT -s $friendIP -j ACCEPT
+
+```
 
 Finally, **always** make sure you save the firewall:
 
