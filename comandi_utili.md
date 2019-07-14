@@ -3,7 +3,7 @@
 
 # iptables - block
 
-To **ban** an IP on the fly
+To **ban** an IP `$foeIP` on the fly
 
      iptables -I INPUT -s $foeip -j DROP
 
@@ -17,7 +17,13 @@ or, to list all blocked (not just the INPUT chain) and show in which chain the o
 sudo iptables --list -n --line-numbers | egrep --color  "(Chain) | $foeIP"
 ```
 
-How Do I Delete or Unblock IP Address 1.2.3.4?
+or perhaps even better:
+
+```bash
+iptables-save | grep $foeIP
+```
+
+How Do I Delete or Unblock IP Address `$friendIP`?
 
 Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above:
 
