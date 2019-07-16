@@ -64,9 +64,15 @@ We add an upstream from the original (forked) repo, so everything is in sync
 
 Checks the status of the repository remote sources. Here you should have only your own github.
 
+Ensure you are on master
+
     $ git checkout master
 
-Ensure you are on master
+Now add the upstream
+
+    $ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
+
+and make sure you are aligned
 
     $ git pull upstream master && git push origin master
 
