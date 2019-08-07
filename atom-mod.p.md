@@ -27,7 +27,9 @@ title: modifiche
 * Aggiornato l'elenco snippet con il file snippets.cson nel repository git
 * aggiunto pacchetto markdown-folding per poter collassare gli header
 * aggiunto pacchetto magic-reflow, disabilitato autoflow
-* creato shortcut  ```
+* creato shortcut
+
+```
 'atom-workspace atom-text-editor':
 'alt-q': 'magic-reflow:reflow'
 ```
@@ -43,7 +45,7 @@ title: modifiche
 - Seguire le istruzioni locali per il primo backup
 - Clonare install in altri posti ("Cloning a backup to a fresh Atom install")
 
-# nuovi moduli (non standard)
+# Nuovi moduli (non standard)
 
 ## Pandoc-crossref
 
@@ -51,24 +53,30 @@ title: modifiche
 - O installare direttamente il binario tirandolo giù da github
 <https://github.com/lierdakil/pandoc-crossref/releases>
 
-## include pandoc
+## include-pandoc
 
-sudo pip install include-pandoc && sudo include-pandoc --update
+È un wrapper per Pandoc che consente l'inclusione di pezzi di markdown come se fossero "locali"
+
+    sudo pip install include-pandoc && sudo include-pandoc --update
 
 ## inline git diff
 
-apm install alpianon/atom-inline-git-diff
+Serve a verificare cosa è cambiato dall'ultimo commit proprio o dall'ultimo commit di qualcun altro.
+
+    apm install alpianon/atom-inline-git-diff
 
 
 ## Inline headers
 
+Crea un tipo di headers che non stanno su un paragrafo a se, ma che stanno sulla stessa riga del paragrafo (non intestazione) che segue.
+
 Segui:
 <https://github.com/alpianon/pandoc-inline-headers>
 
-sudo pip3 install pandoc-inline-headers
+    sudo pip3 install pandoc-inline-headers
 
 ## Mustaches
 
-Per inserire variabili in doppie curly brackets
+Per inserire variabili in doppie curly brackets. Le variabili vanno scritte in un file YAML
 
-sudo pip3 install pandoc-mustache
+    sudo pip3 install pandoc-mustache
