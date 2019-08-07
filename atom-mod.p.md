@@ -47,6 +47,10 @@ title: modifiche
 
 # Nuovi moduli (non standard)
 
+Abbiamo creato o modificato o implementato moduli che non stanno nella distribuzione originale. Ci si fanno cose interessanti. Se ci si installa **markdown-preview-enhanced**, la si imposta per usare il parser Pandoc e usare include-pandoc invece di Pandoc, usando i moduli aggiuntivi, si ha una preview del documento complesso abbastanza fedele. in *Pandoc options: commandline arguments*, inserire:
+
+    --filter=pandoc-mustache, --filter=crossref-ordered-list, --filter=pandoc-vex, --filter=pandoc-crossref, --filter=pandoc-inline-headers
+
 ## Pandoc-crossref
 
 - O installare via cabal
