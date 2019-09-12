@@ -84,3 +84,14 @@ Segui:
 Per inserire variabili in doppie curly brackets. Le variabili vanno scritte in un file YAML
 
     sudo pip3 install pandoc-mustache
+
+
+## Inline-git-diff (mod)
+
+```bash
+cd ~/.atom/packages/inline-git-diff
+git_sync_with_remote.sh
+git_sync_with_remote.sh
+git checkout dev-select-commit
+apm install
+```
