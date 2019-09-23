@@ -173,36 +173,12 @@ Done. Now you will want to amend the only remaining comment, to capture all the 
 Now you can merge your branch back into the master, if you are happy with the changes.
 
 
-## The hard way
-
-Otherwise, you could do something harder (absolutely not advisable).
-
-- checkout the branch you want to clean up.
-- return (soft) to the last good commit
-
-this way:
-
-    git reset --soft HEAD~3
-    git commit -m "New message for the combined commit"
-
-or
-
-    git reset --soft da9e7f34064fe885ac76adf9c543dc98652f5568 #last commit id
-    git commit -m "New message for the combined commit"
-
-- sync with the remote repository, forcing (using `+`).
-
-Like:
-
-    git push origin +master
-
-
 ## Prompt
+
+on `~/.bashrc`, add the following lines:
 
     parse_git_branch() {
       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
     }
 
-    export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-on `~/.bashrc`
+export PS1="${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h \[\033[36m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]: \n> "
