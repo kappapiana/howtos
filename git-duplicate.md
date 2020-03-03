@@ -24,6 +24,7 @@ git remote add upstream [original_repo]
 git fetch upstream
 ```
 
+
 Now checkout the client's branch of the remote (clientspecific in this example):
 
 ```
@@ -41,11 +42,12 @@ The idea is to merge without importing the history
 
 ```
 git checkout master #go back to master
-git merge --squash clientspecific --allow-unrelated-histories #master is synced with clienspecific, no history.
-
+git merge --squash clientspecific --allow-unrelated-histories #master is synced with clientspecific, no history.
+git branch --set-upstream-to=origin/master master
+git push # (or perhaps git push -u origin/master master)
 ```
 
-The same happens the other way round
+The same happens the other way round after changes to the new repo occur:
 
 ```
 git checkout clientspecific
