@@ -29,7 +29,7 @@ Now checkout the client's branch of the remote (clientspecific in this example):
 
 ```
 git branch -r #lists the remote branches
-git checkout -t upstream/clientspecific]
+git checkout -t upstream/clientspecific
 ```
 
 You have a local copy of the client's own branch. Now you need to have it as your master, but without the history.
@@ -55,3 +55,5 @@ git merge --allow-unrelated-histories #first time only
 [resolve merge conflicts]
 git push # pushes master and clientspecific
 ```
+
+`<!--TODO work with more branches-->` 
