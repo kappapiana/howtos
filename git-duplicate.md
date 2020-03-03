@@ -15,7 +15,7 @@ Create a new repository on Github
 
 Create a new local repository and make it downstream to the original repo and fetch the objects.
 
-```
+```bash
 git init
 echo "something" > test
 git add . && git commit -m "first commit" # creates master branch
@@ -27,7 +27,7 @@ git fetch upstream
 
 Now checkout the client's branch of the remote (clientspecific in this example):
 
-```
+```bash
 git branch -r #lists the remote branches
 git checkout -t upstream/clientspecific
 ```
@@ -40,7 +40,7 @@ Now you have a copy of the remote branch and an empty local master, which does n
 
 The idea is to merge without importing the history
 
-```
+```bash
 git checkout master #go back to master
 git merge --squash clientspecific --allow-unrelated-histories #master is synced with clientspecific, no history.
 git branch --set-upstream-to=origin/master master
@@ -49,11 +49,11 @@ git push # (or perhaps git push -u origin/master master)
 
 The same happens the other way round after changes to the new repo occur:
 
-```
+```bash
 git checkout clientspecific
 git merge --allow-unrelated-histories #first time only
 [resolve merge conflicts]
 git push # pushes master and clientspecific
 ```
 
-`<!--TODO work with more branches-->` 
+`<!--TODO work with more branches-->`
