@@ -195,9 +195,29 @@ Poi popoliamo i dati con l'altro comando:
 E di nuovo alla [1] per tutti i nuovi file
 
 Da qui si può generare uno script -->
-<!--
-`<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere
-tolti, il terzo va filtrato, mi sa --> `
 
-<!-- `<!-- FIXME probabilmente lo script che abbiamo generato funziona senza tutta
-questa pippa, con la form che abbiamo creato -->  --> -->
+<!-- FIXME bisogna ancora sistemare i campi multilinea: due possono essere
+tolti, il terzo va filtrato, mi sa -->
+
+<!-- FIXME probabilmente lo script che abbiamo generato funziona senza tuttaquesta pippa, con la form che abbiamo creato -->  
+
+## HiDMI factor scaling
+
+```bash
+$ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+
+```
+
+Per Wayland
+
+```bash
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+```
+
+Remove
+
+```bash
+gsettings reset org.gnome.mutter experimental-features
+
+```

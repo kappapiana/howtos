@@ -1,13 +1,14 @@
-#/bin/bash!
+#!/usr/bin/env bash
+
 
 if [ -d ~/Documenti ]; then
 
 	cd ~/Documenti
 
-else 
+else
 
 	cd ~/Documents
 
-fi 
+fi
 
 /usr/bin/nautilus .
