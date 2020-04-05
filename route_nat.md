@@ -109,10 +109,10 @@ below are the needed rules to achieve that:
         $ iptables -I FORWARD -o virbr0 -d  192.168.122.43 -j ACCEPT
         $ iptables -t nat -A POSTROUTING -s 192.168.122.0/24 -j MASQUERADE
         $ iptables -A FORWARD -o virbr0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-        $ iptables -A FORWARD -i virbr0 -o eth0 -j ACCEPT
+        $ iptables -A FORWARD -i virbr0 -o eno1 -j ACCEPT
         $ iptables -A FORWARD -i virbr0 -o lo -j ACCEPT
 
-where `virbr0` is the interface in `192.168.122.0/24` subnet and `eth0`
+where `virbr0` is the interface in `192.168.122.0/24` subnet and `eno1`
 is interface with public IP address.
 
 Now that we have set up port forwarding, we can save this to our
