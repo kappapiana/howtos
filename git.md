@@ -8,17 +8,14 @@ subject: questo e quello
 
 ## Store credentials
 
-You need to setup the git credential helper with Gnome Keyring:
+You need to setup the git credential helper with Libsecret:
 
-Install and compile the Gnome Keyring devel:
-
-    sudo apt-get install libgnome-keyring-dev
-    sudo make --directory=/usr/share/doc/git/contrib/credential/gnome-keyring
-
-And setup the credentials:
-
-    git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
-
+```shell
+sudo apt install libsecret-1-0 libsecret-1-dev
+cd /usr/share/doc/git/contrib/credential/libsecret
+sudo make
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+```
 
 ## In general, to config
 
