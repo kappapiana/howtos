@@ -8,7 +8,7 @@
 - [ ] stivaletti sport
 - [ ] Casco
 - [ ] sottocasco
-- [ ] maglietta sottotuta
+- [ ] sottotuta
 - [ ] calzoncini corti.
 - [ ] Cappellino
 
@@ -17,8 +17,8 @@
 - [ ] **Biglietto circuito**
     - [ ] Liberatoria
 - [ ] **Certificato medico !!!**
-    - [ ] soldi
-    - [ ] patente
+- [ ] soldi
+- [ ] patente
 
 ## Accessori
 
@@ -34,6 +34,7 @@
 - [ ] termometro
 - [ ] binocolo
 - [ ] tappetino
+- [ ] corone posteriori/pignone
 
 ## Cassetta
 
@@ -47,7 +48,7 @@
 - [ ] ciabatta
 - [ ] 2 chiavi a cricchetto
 - [ ] cacciavitini per cricchetto piccolo
-- [ ] fenafiletti
+- [ ] frenafiletti
 - [ ] WD40
 
 ## Varie
@@ -59,9 +60,10 @@
 - [ ] calze, maglietta, mutande di ricambio
 - [ ] ciabatte
 - [ ] barrette
-- [ ] accappatoio o asciugamano
+- [ ] accappatoio e asciugamano
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
 - [ ] Sedia pieghevole
 - [ ] gazebo
+- [ ] gaaaaassssssss!
