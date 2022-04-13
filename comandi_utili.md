@@ -229,3 +229,13 @@ Remove
 gsettings reset org.gnome.mutter experimental-features
 
 ```
+
+## diff color in html
+
+- Install aha
+
+```shell
+git diff --word-diff --color HEAD^1 | aha > temp.html
+```
+
+`--color` is required owing to diff doesn't yield ANSI color to the standard input by default. 
