@@ -11,6 +11,8 @@
 - [ ] sottotuta
 - [ ] calzoncini corti.
 - [ ] Cappellino
+- [ ] Lenti
+- [ ] lacrime artificiali
 
 ## Documenti
 
@@ -22,34 +24,33 @@
 
 ## Accessori
 
-- [ ] gps
-- [ ] grasso catena
-- [ ] cavalletti
-- [ ] cavo lungo
+- [x] gps
+- [x] grasso catena
+- [x] cavalletti
+- [x] cavo lungo
 - [ ] Termo
-- [ ] Telecamera
+- [x] Telecamera
 - [ ] Pompa
 - [ ] chiave dinamometrica
 - [ ] Carta
 - [ ] termometro
-- [ ] binocolo
-- [ ] tappetino
-- [ ] corone posteriori/pignone
+- [x] binocolo
+- [x] tappetino
 
 ## Cassetta
 
-- [ ] 3 cacciaviti
-- [ ] Misura pressione gomme
-- [ ] Brugole
-- [ ] Brugole attacco 1/2"
-- [ ] chiavi 2x10 12 18 22 bussola
-- [ ] batterie
-- [ ] lampada
-- [ ] ciabatta
-- [ ] 2 chiavi a cricchetto
-- [ ] cacciavitini per cricchetto piccolo
-- [ ] frenafiletti
-- [ ] WD40
+- [x] 3 cacciaviti
+- [x] Misura pressione gomme
+- [x] Brugole
+- [x] Brugole attacco 1/2"
+- [x] chiavi 2x10 12 18 22 bussola
+- [x] batterie
+- [x] lampada
+- [x] ciabatta
+- [x] 2 chiavi a cricchetto
+- [x] cacciavitini per cricchetto piccolo
+- [x] frenafiletti
+- [x] WD40
 
 ## Varie
 
@@ -64,6 +65,6 @@
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
-- [ ] Sedia pieghevole
-- [ ] gazebo
+- [x] Sedia pieghevole
+- [x] gazebo
 - [ ] gaaaaassssssss!
