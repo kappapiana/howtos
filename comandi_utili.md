@@ -92,19 +92,27 @@ Copiamo nella directory che abbiamo creato i file (da Thunderbird si può fare c
 
 Verifica che tutti i messaggi siano validi Smime, quali file abbiano problemi di certificato (se expired o con firma modificata):
 
-    find $(date +"%Y-%m-%d")\_$range/ -type f -exec openssl smime -verify -in "{}" \; | grep verification
+    <!-- find $(date +"%Y-%m-%d")\_$range/ -type f -exec openssl smime -verify -in "{}" \; | grep verification
 
 > *Nota:* meglio farlo dalla directory madre.
 
 Crea una lista di corrispondenza tra i vari hash e il file dal quale essi sono stati generati:
 
 
-    find $(date +"%Y-%m-%d")\_$range/ -type f -exec sha256sum "{}" \; > $(date +"%Y-%m-%d")\_lista_hash.txt
+    find $(date +"%Y-%m-%d")\_$range/ -type f -exec sha256sum "{}" \; > $(date +"%Y-%m-%d")\_lista_hash.txt -->
+
+```script
+for i in *.eml ; do echo "$i" ; \
+openssl smime -verify -in "$i" ; \
+sha256sum "$i" >> lista_hash.txt ; done | grep verification
+```
+
 
 Estrae solo gli hash senza lista dei nomi:
 
-    cat $(date +"%Y-%m-%d")\_lista_hash.txt | awk '{print $1}' > $(date +"%Y-%m-%d")\_lista_hash_noname.txt
-
+```
+ cut -d " " -f1 lista_hash.txt > dichiarazione_conservazione.txt
+```
 
 Metto tutte le poste elettroniche in uno zip;
 
@@ -221,3 +229,13 @@ Remove
 gsettings reset org.gnome.mutter experimental-features
 
 ```
+
+## diff color in html
+
+- Install aha
+
+```shell
+git diff --word-diff --color HEAD^1 | aha > temp.html
+```
+
+`--color` is required owing to diff doesn't yield ANSI color to the standard input by default. 
