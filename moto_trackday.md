@@ -11,53 +11,28 @@
 - [ ] sottotuta
 - [ ] calzoncini corti.
 - [ ] Cappellino
-- [ ] Lenti
+- [ ] Lenti 
 - [ ] lacrime artificiali
 
 ## Documenti
 
-- [ ] **Biglietto circuito**
-    - [ ] Liberatoria
+- [ ] Liberatoria
 - [ ] **Certificato medico !!!**
 - [ ] soldi
 - [ ] patente
 
 ## Accessori
 
-- [x] gps
-- [x] grasso catena
-- [x] cavalletti
-- [x] cavo lungo
 - [ ] Termo
-- [x] Telecamera
-- [ ] Pompa
-- [ ] chiave dinamometrica
-- [ ] Carta
+- [ ] Telecamera
 - [ ] termometro
-- [x] binocolo
-- [x] tappetino
-
-## Cassetta
-
-- [x] 3 cacciaviti
-- [x] Misura pressione gomme
-- [x] Brugole
-- [x] Brugole attacco 1/2"
-- [x] chiavi 2x10 12 18 22 bussola
-- [x] batterie
-- [x] lampada
-- [x] ciabatta
-- [x] 2 chiavi a cricchetto
-- [x] cacciavitini per cricchetto piccolo
-- [x] frenafiletti
-- [x] WD40
+- [ ] binocolo
 
 ## Varie
 
 - [ ] liquido pulisci visiera
 - [ ] Tanica benzina  e benzina serbatoio
 - [ ] Caricabatterie
-- [ ] imbuto benzina
 - [ ] calze, maglietta, mutande di ricambio
 - [ ] ciabatte
 - [ ] barrette
@@ -65,6 +40,37 @@
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
-- [x] Sedia pieghevole
-- [x] gazebo
 - [ ] gaaaaassssssss!
+
+# Senza Francescotti
+
+## Varie
+
+- [ ] **Biglietto circuito**
+- [ ] gps
+- [ ] grasso catena
+- [ ] cavalletti
+- [ ] cavo lungo
+- [ ] Pompa
+- [ ] chiave dinamometrica
+- [ ] Carta
+- [ ] tappetino
+- [ ] imbuto benzina
+- [ ] Sedia pieghevole
+- [ ] gazebo
+
+
+## Cassetta
+
+- [ ] 3 cacciaviti
+- [ ] Misura pressione gomme
+- [ ] Brugole
+- [ ] Brugole attacco 1/2"
+- [ ] chiavi 2x10 12 18 22 bussola
+- [ ] batterie
+- [ ] lampada
+- [ ] ciabatta
+- [ ] 2 chiavi a cricchetto
+- [ ] cacciavitini per cricchetto piccolo
+- [ ] frenafiletti
+- [ ] WD40
