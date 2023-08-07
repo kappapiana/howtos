@@ -13,6 +13,7 @@
 - [ ] Cappellino
 - [ ] Lenti 
 - [ ] lacrime artificiali
+- [ ] occhiali da vecchio
 
 ## Documenti
 
@@ -27,6 +28,7 @@
 - [ ] Telecamera
 - [ ] termometro
 - [ ] binocolo
+- [ ] borsetta kit dainese
 
 ## Varie
 
