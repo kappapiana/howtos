@@ -19,7 +19,7 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 
 ## In general, to config
 
-    git config --global user.name kappapiana
+    git config --global user.name kappapianaù
 
 To store for a particular repository
 
@@ -182,3 +182,15 @@ parse_git_branch() {
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h \[\033[36m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]: \n$ "
 
 ```
+
+## Remove gone branches
+
+use the `git gone` alias
+
+`$ git config --global --edit`
+
+and add this to the `[alias]` section:
+```
+
+      gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+`
