@@ -182,3 +182,14 @@ parse_git_branch() {
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h \[\033[36m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]: \n$ "
 
 ```
+
+Remove local branches when upstream have gone
+
+```shell
+git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' |   awk '$2 == "[gone]" {print $1}' |   xargs -r git branch -D
+```
+
+Much easier to map an alias like `git gone` in ~/.gitconfig
+
+[alias]
+	gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
