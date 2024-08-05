@@ -11,7 +11,7 @@
 - [ ] sottotuta
 - [ ] calzoncini corti.
 - [ ] Cappellino
-- [ ] Lenti 
+- [ ] Lenti
 - [ ] lacrime artificiali
 - [ ] occhiali da vecchio
 
@@ -26,6 +26,7 @@
 
 - [ ] Termo
 - [ ] Telecamera
+- [ ] batterie cariche e caricabatteria
 - [ ] termometro
 - [ ] binocolo
 - [ ] borsetta kit dainese
@@ -33,46 +34,48 @@
 ## Varie
 
 - [ ] liquido pulisci visiera
-- [ ] Tanica benzina  e benzina serbatoio
 - [ ] Caricabatterie
 - [ ] calze, maglietta, mutande di ricambio
 - [ ] ciabatte
 - [ ] barrette
-- [ ] accappatoio e asciugamano
+- [ ] accappatoio
+- [ ] asciugamano
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
 - [ ] gaaaaassssssss!
+- [ ] **Biglietto circuito**
+- [ ] Alcol isopropilico
 
 # Senza Francescotti
 
 ## Varie
 
-- [ ] **Biglietto circuito**
-- [ ] gps
-- [ ] grasso catena
-- [ ] cavalletti
-- [ ] cavo lungo
-- [ ] Pompa
-- [ ] chiave dinamometrica
-- [ ] Carta
-- [ ] tappetino
-- [ ] imbuto benzina
-- [ ] Sedia pieghevole
-- [ ] gazebo
+- [x] Tanica benzina e benzina serbatoio
+- [x] gps
+- [x] grasso catena
+- [x] cavalletti
+- [x] cavo lungo
+- [x] Pompa
+- [x] chiave dinamometrica
+- [x] Carta
+- [x] tappetino
+- [x] imbuto benzina
+- [x] Sedia pieghevole
+- [x] gazebo
 
 
 ## Cassetta
 
-- [ ] 3 cacciaviti
-- [ ] Misura pressione gomme
-- [ ] Brugole
-- [ ] Brugole attacco 1/2"
-- [ ] chiavi 2x10 12 18 22 bussola
-- [ ] batterie
-- [ ] lampada
-- [ ] ciabatta
-- [ ] 2 chiavi a cricchetto
-- [ ] cacciavitini per cricchetto piccolo
-- [ ] frenafiletti
-- [ ] WD40
+- [x] 3 cacciaviti
+- [x] Misura pressione gomme
+- [x] Brugole
+- [x] Brugole attacco 1/2"
+- [x] chiavi 2x10 12 18 22 bussola
+- [x] batterie
+- [x] lampada
+- [x] ciabatta
+- [x] 2 chiavi a cricchetto
+- [x] cacciavitini per cricchetto piccolo
+- [x] frenafiletti
+- [x] WD40
