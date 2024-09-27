@@ -239,3 +239,18 @@ git diff --word-diff --color HEAD^1 | aha > temp.html
 ```
 
 `--color` is required owing to diff doesn't yield ANSI color to the standard input by default. 
+
+
+# Tailscale
+
+```shell
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+```shell
+sudo tailscale up
+```
+
+invito: https://login.tailscale.com/admin/invite/HgSX5HgtGLe
+
+Fossology: https://100.80.177.149/repo
