@@ -254,3 +254,15 @@ sudo tailscale up
 invito: https://login.tailscale.com/admin/invite/HgSX5HgtGLe
 
 Fossology: https://100.80.177.149/repo
+
+# HDR
+
+```shell
+align_image_stack -m -a OUT *.tif
+```
+
+```shell
+enfuse -o output.tif --contrast-edge-scale=0.3 --gray-projector=l-star --exposure-weight=0 --saturation-weight=0 --contrast-weight=1 --hard-mask OUT000*.tif 
+
+
+```
