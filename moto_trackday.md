@@ -14,6 +14,7 @@
 - [ ] Lenti
 - [ ] lacrime artificiali
 - [ ] occhiali da vecchio
+- [ ] antipioggia
 
 ## Documenti
 
