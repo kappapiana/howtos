@@ -19,7 +19,7 @@
 ## Documenti
 
 - [ ] Liberatoria
-- [ ] **Certificato medico !!!**
+- [x] **Certificato medico !!!**
 - [ ] soldi
 - [ ] patente
 
@@ -30,7 +30,6 @@
 - [ ] batterie cariche e caricabatteria
 - [ ] termometro
 - [ ] binocolo
-- [ ] borsetta kit dainese
 
 ## Varie
 
@@ -44,9 +43,9 @@
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
-- [ ] gaaaaassssssss!
 - [ ] **Biglietto circuito**
 - [ ] Alcol isopropilico
+- [ ] gaaaaassssssss!
 
 # Senza Francescotti
 
