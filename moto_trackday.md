@@ -3,7 +3,7 @@ geometry:
   - a4paper
   - margin=1.5cm
 documentclass: extarticle  # <--- Cambiato da 'article' a 'extarticle'
-fontsize: 12pt             
+fontsize: 12pt
 ---
 
 # Portare moto / preparare
