@@ -1,3 +1,11 @@
+---
+geometry:
+  - a4paper
+  - margin=1.5cm
+documentclass: extarticle  # <--- Cambiato da 'article' a 'extarticle'
+fontsize: 12pt             
+---
+
 # Portare moto / preparare
 
 ## Abbigliamento
@@ -22,6 +30,7 @@
 - [x] **Certificato medico !!!**
 - [ ] soldi
 - [ ] patente
+- [ ] **Biglietto circuito**
 
 ## Accessori
 
@@ -30,12 +39,15 @@
 - [ ] batterie cariche e caricabatteria
 - [ ] termometro
 - [ ] binocolo
+- [ ] cavi vari
 
 ## Varie
 
 - [ ] liquido pulisci visiera
 - [ ] Caricabatterie
-- [ ] calze, maglietta, mutande di ricambio
+- [ ] calze, di ricambio
+- [ ] maglietta, di ricambio
+- [ ] mutande di ricambio
 - [ ] ciabatte
 - [ ] barrette
 - [ ] accappatoio
@@ -43,7 +55,6 @@
 - [ ] liquidi integratori
 - [ ] computer
 - [ ] Aspirina-somac
-- [ ] **Biglietto circuito**
 - [ ] Alcol isopropilico
 - [ ] gaaaaassssssss!
 
