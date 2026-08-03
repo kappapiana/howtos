@@ -4,6 +4,8 @@ geometry:
   - margin=1.5cm
 documentclass: extarticle  # <--- Cambiato da 'article' a 'extarticle'
 fontsize: 12pt
+# classoption:
+#  - twocolumn
 ---
 
 # Portare moto / preparare
@@ -15,22 +17,25 @@ fontsize: 12pt
 - [ ] guanti sport
 - [ ] stivaletti sport
 - [ ] Casco
-- [ ] sottocasco
+<!-- - [ ] sottocasco -->
 - [ ] sottotuta
 - [ ] calzoncini corti.
 - [ ] Cappellino
-- [ ] Lenti
-- [ ] lacrime artificiali
-- [ ] occhiali da vecchio
 - [ ] antipioggia
+- [ ] accappatoio
+- [ ] asciugamano
 
-## Documenti
+## Zaino
 
 - [ ] Liberatoria
 - [x] **Certificato medico !!!**
 - [ ] soldi
 - [ ] patente
 - [ ] **Biglietto circuito**
+- [ ] Lenti
+- [ ] lacrime artificiali
+- [ ] occhiali da vecchio
+- [ ] Aspirina-somac
 
 ## Accessori
 
@@ -50,13 +55,13 @@ fontsize: 12pt
 - [ ] mutande di ricambio
 - [ ] ciabatte
 - [ ] barrette
-- [ ] accappatoio
-- [ ] asciugamano
 - [ ] liquidi integratori
+- [ ] borraccia
 - [ ] computer
-- [ ] Aspirina-somac
 - [ ] Alcol isopropilico
 - [ ] gaaaaassssssss!
+
+\pagebreak
 
 # Senza Francescotti
 
