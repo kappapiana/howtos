@@ -266,3 +266,32 @@ enfuse -o output.tif --contrast-edge-scale=0.3 --gray-projector=l-star --exposur
 
 
 ```
+
+# Copy command output to the clipboard
+
+Depends on the session type: check with `echo $XDG_SESSION_TYPE`.
+
+**Wayland** (install `wl-clipboard`):
+
+```bash
+pwd | wl-copy          # copy
+pwd | wl-copy -n       # copy without the trailing newline
+wl-paste               # paste back in the terminal
+```
+
+**X11** (install `xclip`):
+
+```bash
+pwd | xclip -selection clipboard           # copy, then Ctrl+V anywhere
+pwd | tr -d '\n' | xclip -sel c            # without the trailing newline
+xclip -selection clipboard -o              # paste back in the terminal
+pwd | xclip                                # "primary" selection, paste with middle-click
+```
+
+Works with any command: `cat file.txt | wl-copy`, `ls -la | xclip -sel c`.
+
+Alias for `~/.bashrc` / `~/.zshrc`:
+
+```bash
+alias cpwd='pwd | tr -d "\n" | wl-copy'    # or: xclip -selection clipboard
+```
