@@ -1,15 +1,18 @@
-# useful recurring commands
+# Useful recurring commands
 
-
-# iptables - block
+# iptables
 
 To **ban** an IP `$foeIP` on the fly
 
-     iptables -I INPUT -s $foeip -j DROP
+```bash
+iptables -I INPUT -s $foeIP -j DROP
+```
 
 To view blocked IP addresses (if entered with the command above), enter:
 
-    iptables -L INPUT -v -n
+```bash
+iptables -L INPUT -v -n
+```
 
 or, to list all blocked (not just the INPUT chain) and show in which chain the offending ip is
 
@@ -25,17 +28,17 @@ iptables-save | grep $foeIP
 
 How Do I Delete or Unblock IP Address `$friendIP`?
 
-Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above:
+Use the following syntax to **delete** or unblock an IP address under Linux, enter (where `$chain` is the chain found above):
 
 ```bash
-    iptables -D $chain -s $friendIP -j DROP
+iptables -D $chain -s $friendIP -j DROP
 ```
 
 Check if the chain is INPUT!
 
 If the chain is fail2ban-ip-blocklist, remove the corresponding line(s) from `ip.blocklist.repeatoffender`
 
-        sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
+    sudo vim /etc/fail2ban/ip.blocklist.repeatoffender
 
 Because it's something that you will find again at the next restart of fail2ban!
 
@@ -43,20 +46,19 @@ To whitelist an IP (be sure this rule prevails)
 
 ```bash
 sudo iptables -A INPUT -s $friendIP -j ACCEPT
-
 ```
 
 Finally, **always** make sure you save the firewall:
 
-    sudo sh -c "iptables-save > /etc/network/iptables.save"
+```bash
+sudo sh -c "iptables-save > /etc/network/iptables.save"
+```
 
-**note: or add permanence**
+**Note:** or make the rules persistent (e.g. `iptables-persistent`).
 
-# logs
+# Logs
 
-To get offending IP from access.logs
-
-From mail.log
+Extract offending IPs from `mail.log` (for `access.log` adapt the patterns):
 
 ```bash
 sudo tail -n 1000 /var/log/mail.log | egrep "(unknown\[.*]\: SASL LOGIN authentication failed)\
@@ -74,11 +76,13 @@ Grep 91.20 just to limit to a subnetwork, can be omitted. **Note** only works wi
 
 to find only the IP part.
 
-# conservazione
+# Conservazione
 
 Per comodità, creiamo il range di mesi (così sarà sufficiente copiare i singoli comandi dalla directory madre e tutto dovrebbe funzionare senza ulteriori interventi)
 
-    export range="[mese1-mese2]"
+```bash
+export range="[mese1-mese2]"
+```
 
 cambiando il mese in questione
 
@@ -86,22 +90,27 @@ cambiando il mese in questione
 
 Creo una directory dove esportare tutti i messaggi come singoli file .eml:
 
-    mkdir $(date +"%Y-%m-%d")\_$range/
+```bash
+mkdir $(date +"%Y-%m-%d")_$range/
+```
 
 Copiamo nella directory che abbiamo creato i file (da Thunderbird si può fare con `ImportExportTools` usando `Search and Export`).
 
 Verifica che tutti i messaggi siano validi Smime, quali file abbiano problemi di certificato (se expired o con firma modificata):
 
-    <!-- find $(date +"%Y-%m-%d")\_$range/ -type f -exec openssl smime -verify -in "{}" \; | grep verification
-
 > *Nota:* meglio farlo dalla directory madre.
+
+<!-- Vecchia versione, ricorsiva sulla directory:
+
+find $(date +"%Y-%m-%d")_$range/ -type f -exec openssl smime -verify -in "{}" \; | grep verification
 
 Crea una lista di corrispondenza tra i vari hash e il file dal quale essi sono stati generati:
 
 
-    find $(date +"%Y-%m-%d")\_$range/ -type f -exec sha256sum "{}" \; > $(date +"%Y-%m-%d")\_lista_hash.txt -->
+find $(date +"%Y-%m-%d")_$range/ -type f -exec sha256sum "{}" \; > $(date +"%Y-%m-%d")_lista_hash.txt
+-->
 
-```script
+```bash
 for i in *.eml ; do echo "$i" ; \
 openssl smime -verify -in "$i" ; \
 sha256sum "$i" >> lista_hash.txt ; done | grep verification
@@ -110,8 +119,8 @@ sha256sum "$i" >> lista_hash.txt ; done | grep verification
 
 Estrae solo gli hash senza lista dei nomi:
 
-```
- cut -d " " -f1 lista_hash.txt > dichiarazione_conservazione.txt
+```bash
+cut -d " " -f1 lista_hash.txt > dichiarazione_conservazione.txt
 ```
 
 Metto tutte le poste elettroniche in uno zip;
@@ -127,7 +136,7 @@ Faccio backup
 
 ## vedere al volo .p7m senza app del cavolo
 
-`openssl smime -in documento.p7m -inform DER -verify -noverify -out documento.pdf ` `#o .txt`
+`openssl smime -in documento.p7m -inform DER -verify -noverify -out documento.pdf` (o `.txt`)
 
 se si vuole verificare il documento, usare il file delle CA
 
@@ -148,18 +157,20 @@ Questo fa vedere le informazioni del certificato:
 
 Per scaricare i certificati delle CA
 
-    # /bin/bash
-    wget -O - https://applicazioni.cnipa.gov.it/TSL/_IT_TSL_signed.xml | perl -ne 'if (/<X509Certificate>/) {
-    s/^\s+//; s/\s+$//;
-    s/<\/*X509Certificate>//g;
-    print "-----BEGIN CERTIFICATE-----\n";
-    while (length($_)>64) {
-    print substr($_,0,64)."\n";
-    $_=substr($_,64);
-    }
-    print $_."\n";
-    print "-----END CERTIFICATE-----\n";
-    }'
+```bash
+#!/bin/bash
+wget -O - https://applicazioni.cnipa.gov.it/TSL/_IT_TSL_signed.xml | perl -ne 'if (/<X509Certificate>/) {
+s/^\s+//; s/\s+$//;
+s/<\/*X509Certificate>//g;
+print "-----BEGIN CERTIFICATE-----\n";
+while (length($_)>64) {
+print substr($_,0,64)."\n";
+$_=substr($_,64);
+}
+print $_."\n";
+print "-----END CERTIFICATE-----\n";
+}'
+```
 
 metterlo in un file script e dirigere l'output su un file chiamato CA.pem (vedi i comandi) che contiene i certificati validi a quel momento.
 
@@ -167,14 +178,14 @@ metterlo in un file script e dirigere l'output su un file chiamato CA.pem (vedi 
 
 Per creare un HTML fatto benino:
 
-`pandoc -N --toc -Ss -c  ~/Documents/markdown/utility/pandoc.css comandi_utili.md -o comandi_utili.html --self-contained`
+`pandoc -N --toc -s -c  ~/Documents/markdown/utility/pandoc.css comandi_utili.md -o comandi_utili.html --self-contained`
 
 
-# Ubuntu sound systems not silenced
+# Ubuntu: silence event sounds
 
-On the command shell:
-
-    dconf write /org/gnome/desktop/sound/event-sounds false
+```bash
+dconf write /org/gnome/desktop/sound/event-sounds false
+```
 
 <!-- # FDF per estrarre roba dai PDF compilati
 
@@ -209,14 +220,16 @@ tolti, il terzo va filtrato, mi sa -->
 
 <!-- FIXME probabilmente lo script che abbiamo generato funziona senza tuttaquesta pippa, con la form che abbiamo creato -->  
 
-## HiDMI factor scaling
+# GNOME: HiDPI fractional scaling
+
+X11:
 
 ```bash
-$ gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
 ```
 
-Per Wayland
+Wayland:
 
 ```bash
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
@@ -230,15 +243,15 @@ gsettings reset org.gnome.mutter experimental-features
 
 ```
 
-## diff color in html
+# `git diff` to coloured HTML
 
-- Install aha
+Install `aha`, then:
 
 ```shell
 git diff --word-diff --color HEAD^1 | aha > temp.html
 ```
 
-`--color` is required owing to diff doesn't yield ANSI color to the standard input by default. 
+`--color` is required because git does not emit ANSI colours when piped.
 
 
 # Tailscale
