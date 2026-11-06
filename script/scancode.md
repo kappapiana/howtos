@@ -1,3 +1,5 @@
+directory di base `oss_sdk/build/tmp/deploy/sources`
+
 installazione di scancode:
 
 ```shell
@@ -17,13 +19,31 @@ chmod +x ~/.local/bin/scancode
 
 echo '#!/bin/bash
 . ~/scancode_venv/bin/activate
-extractcode $@
+extractcode $@  
 deactivate
 ' > ~/.local/bin/extractcode
-chmod +x ~/.local/bin/extractcode
+chmod +x deac
 ```
 
 nella cartella dove ci sono i tarball:
+
+c'era il problema "The plugincode 32.0.0 package, which extractcode and scancode depend on, clashes with the newly installed pluggy 1.7.0 and causes the traceback, so I'm going to try pinning pluggy to an older version." (claude)
+
+> Fix: I downgraded pluggy in the venv:
+> ~/scancode_venv/bin/pip install "pluggy<1.6"
+> After that, extractcode --list-formats loads normally.
+>
+
+in più su arm va installato 
+
+`sudo apt install libarchive-dev libmagic1 p7zip-full`
+
+e poi 
+
+```shell
+export EXTRACTCODE_LIBARCHIVE_PATH=$(ls /usr/lib/aarch64-linux-gnu/libarchive.so* | head -1)
+echo $EXTRACTCODE_LIBARCHIVE_PATH   # should print a real path
+```
 
 ```shell
 tar xzf sources-1.0.472.tgz
@@ -46,4 +66,16 @@ for recipe in *; do
   rm ../copyrights/$rname/copyrights.all.txt
 done
 
-````
+```
+
+Ci vuole una vita
+
+Fa tutte le directory in sources
+
+Alla fine c'è una lista di file con [-----#----] numero scannedi: nomefile
+
+Ci pensa un po'  a ' [####################] 249910
+
+POi passa alla prossima directory
+
+Ha creato solo `allarch` e `arm-poky`, chiesto a Al
