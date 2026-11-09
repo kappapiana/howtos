@@ -78,4 +78,4 @@ Ci pensa un po'  a ' [####################] 249910
 
 POi passa alla prossima directory
 
-Ha creato solo `allarch` e `arm-poky`, chiesto a Al
+IN realtà ho usato uno script che fa tutto in modo più safe. in `git/stuff/script/scan_copyrights.sh`
