@@ -6,14 +6,15 @@ How to get data and an equivalent system back from the backup drive
 ## 0. Before wiping the old system
 
 ```bash
-~/script/backup/foto_copper-toshiba.sh -s
+~/script/backup/foto_copper-toshiba.sh
 ```
 
 - Saves package lists, GNOME settings and dotfiles to `~/backup-state`.
-- `-s` also saves `~/.ssh`, `~/.gnupg` and `~/.local/share/keyrings` to
-  `~/backup-state/secrets.tar.gpg`, encrypted with a passphrase. **Write that
-  passphrase down somewhere other than this computer.** The drive is not
-  encrypted, so the secrets never go there in plain form.
+- Also saves `~/.ssh`, `~/.gnupg` and `~/.local/share/keyrings` to
+  `~/backup-state/secrets.tar`, with no extra password. Your SSH keys have no
+  passphrase, so **anyone who gets the drive can use them** (GitHub, servers).
+  Keep the drive somewhere safe, and if it's lost, replace the keys on GitHub
+  and the servers.
 - Then copies everything in `backup.list.txt` (including `~/backup-state`) to
   the drive.
 - Check `~/backup-state/TIMESTAMP` on the drive to confirm it's today's run.
@@ -46,7 +47,7 @@ run this as your user and without `sudo`.
 ## 2. Secrets
 
 ```bash
-gpg -d ~/backup-state/secrets.tar.gpg | tar -C "$HOME" -xf -
+tar -C "$HOME" -xpf ~/backup-state/secrets.tar
 chmod 700 ~/.ssh ~/.gnupg
 chmod 600 ~/.ssh/id_*  ;  chmod 644 ~/.ssh/*.pub
 ```

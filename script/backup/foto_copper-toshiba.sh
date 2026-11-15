@@ -1,8 +1,6 @@
 #!/bin/bash
 # Back up the folders in backup.list.txt to the external drive.
 #   -d   dry run (no state dump, rsync --dry-run)
-#   -s   also save ~/.ssh, ~/.gnupg and keyrings in an encrypted archive
-#        (asks for a passphrase)
 # See RESTORE.md for how to bring everything back on a new install.
 
 DEST=/media/carlo/unenc_backup
@@ -11,12 +9,10 @@ LIST="$(dirname "$0")/backup.list.txt"
 
 RSYNC_OPTS=(-av)
 DRY=0
-SECRETS=0
 for arg in "$@"; do
     case "$arg" in
         -d) DRY=1; RSYNC_OPTS+=(--dry-run) ;;
-        -s) SECRETS=1 ;;
-        *) echo "usage: $0 [-d] [-s]" >&2; exit 2 ;;
+        *) echo "usage: $0 [-d]" >&2; exit 2 ;;
     esac
 done
 
@@ -47,11 +43,10 @@ dump_state() {
 
 if (( DRY == 0 )); then
     dump_state
-    if (( SECRETS == 1 )); then
-        tar -C "$HOME" -cf - .ssh .gnupg .local/share/keyrings \
-            | gpg --symmetric --cipher-algo AES256 --yes -o "$STATE/secrets.tar.gpg" \
-            && echo "Encrypted secrets saved to $STATE/secrets.tar.gpg"
-    fi
+    # Keys and saved passwords, copied as they are (no extra password).
+    tar -C "$HOME" -cf "$STATE/secrets.tar" .ssh .gnupg .local/share/keyrings \
+        && chmod 600 "$STATE/secrets.tar" \
+        && echo "Keys saved to $STATE/secrets.tar"
 fi
 
 while IFS= read -r dir || [[ -n "$dir" ]]; do
