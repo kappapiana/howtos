@@ -8,3 +8,4 @@
 /home/carlo/.claude
 /home/carlo/Music
 /home/carlo/backup-state
+/home/carlo/.config/darktable

@@ -38,7 +38,13 @@ for d in Pictures Videos darktable_gallery vm git popos-migration \
          backups_euroit .claude Music backup-state; do
     rsync -avn "$B/$d/" "$HOME/$d/"    # remove -n when the output looks right
 done
+# darktable library, edit history and styles (lands in .config, not in ~)
+rsync -avn "$B/darktable/" "$HOME/.config/darktable/"
 ```
+
+Restore darktable before opening it for the first time. Photos must be back at
+the same paths (`~/Pictures`, `~/darktable_gallery`), or the library won't find
+them.
 
 The trailing `/` on both sides copies the *contents* into the folder of the same
 name. Files are written as your new user, so ownership is correct as long as you
