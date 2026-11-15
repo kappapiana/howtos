@@ -1,5 +1,5 @@
-~/Pictures
-~/Videos
+/home/carlo/Pictures
+/home/carlo/Videos
 /home/carlo/darktable_gallery
 /home/carlo/vm
 /home/carlo/git
@@ -7,4 +7,3 @@
 /home/carlo/backups_euroit
 /home/carlo/.claude
 /home/carlo/Music
-/home/carlo/.claude

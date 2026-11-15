@@ -1,11 +1,13 @@
 #!/bin/bash
 
-DRY_RUN=""
+RSYNC_OPTS=(-av)
 if [[ "$1" == "-d" ]]; then
-    DRY_RUN="--dry-run"
+    RSYNC_OPTS+=(--dry-run)
 fi
+
+LIST="$(dirname "$0")/backup.list.txt"
 
 while IFS= read -r dir || [[ -n "$dir" ]]; do
     [[ -z "$dir" ]] && continue
-    rsync -av $DRY_RUN "$dir" /media/carlo/unenc_backup/
-done < backup.list.txt
+    rsync "${RSYNC_OPTS[@]}" "$dir" /media/carlo/unenc_backup/
+done < "$LIST"
