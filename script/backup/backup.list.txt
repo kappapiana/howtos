@@ -7,3 +7,4 @@
 /home/carlo/backups_euroit
 /home/carlo/.claude
 /home/carlo/Music
+/home/carlo/backup-state
